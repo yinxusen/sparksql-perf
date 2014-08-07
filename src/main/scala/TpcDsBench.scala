@@ -48,7 +48,11 @@ object TpcDsBench extends App with BenchmarkUtils {
       .setAppName("TpcDsBench")
     val sc = new SparkContext(conf)
     val hc = new HiveContext(sc)
-    properties.foreach(s => hc.set(s.split("=")(0), s.split("=")(1)))
+    // properties.foreach(s => hc.set(s.split("=")(0), s.split("=")(1)))
+
+    // val createTables = new TpcDsTables(hc, System.getenv("TPCDS_DATA_DIR"))
+    // createTables.allTables.foreach(t => t.collect())
+
 
     val queriesObj = new TpcDsQueries(hc, queries, System.getenv("TPCDS_DATA_DIR"))
     val tablesObj = new TpcDsTables(hc, System.getenv("TPCDS_DATA_DIR"))

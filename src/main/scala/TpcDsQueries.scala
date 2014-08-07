@@ -141,6 +141,7 @@ class TpcDsQueries(
     ,i_manufact
       limit 100""")
 
+  /*
   val q27partitioned = hql("""
     select  i_item_id,
     s_state,
@@ -159,11 +160,12 @@ class TpcDsQueries(
     cd_education_status = 'Primary' and
   d_year = 1998 and
     s_state = 'TN' and
-  ss_sold_date between '1998-01-01' and '1998-12-31'
+  ss_sold_date_sk between '1998-01-01' and '1998-12-31'
   group by i_item_id, s_state
   order by i_item_id
   ,s_state
   limit 100""")
+*/
 
   val q27 = hql("""
     select  i_item_id,

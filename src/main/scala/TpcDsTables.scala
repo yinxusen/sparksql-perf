@@ -40,7 +40,7 @@ class TpcDsTables(
     "store",
     "time_dim"
   )
-  tableNames.foreach(tbl => hql(s"DROP TABLE IF EXISTS $tbl"))
+  // tableNames.foreach(tbl => hql(s"DROP TABLE IF EXISTS $tbl"))
 
   val customer = hql(s"""
     create external table IF NOT EXISTS customer
